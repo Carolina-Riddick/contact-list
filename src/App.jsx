@@ -11,7 +11,7 @@ export default function App() {
   const handelModal = () => setIsModal(!isModal)
 
   const handelsubmit = (valor) => {
-    toast("Contacto guardado", {
+    toast("Saved contact", {
       duration: 2000,
       position: "top-center",
     });
@@ -20,7 +20,7 @@ export default function App() {
 
   const handelEliminar = (id) => {
     const nuevoContactos = contactos.filter((contacto) => contacto.id !== id);
-    toast("Contacto Eliminado", {
+    toast("Deleted contact", {
       duration: 2000,
       position: "top-center",
     });

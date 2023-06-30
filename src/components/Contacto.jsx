@@ -11,8 +11,8 @@ export default function Contacto({contacto,handelEliminar}) {
       <div className="body">
         <div className="imagen">Imagen</div>
         <div className="datos">
-        <span>{contacto.nombre}</span>
-        <p>{contacto.telefono}</p>
+        <span>{contacto.name}</span>
+        <p>{contacto.phone}</p>
       </div>
       </div>
 

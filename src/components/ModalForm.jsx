@@ -6,8 +6,8 @@ import toast, { Toaster } from "react-hot-toast";
 export default function ModalForm({ handelModal, handelsubmit }) {
   const [inputValues, setInputValues] = useState({
     id: Math.random(1),
-    nombre: "",
-    telefono: 0,
+    name: "",
+    phone: 0,
   });
 
   const handelchange = (e) => {
@@ -17,18 +17,18 @@ export default function ModalForm({ handelModal, handelsubmit }) {
   const guardarDatos = (e) => {
     e.preventDefault();
 
-    if (inputValues.nombre === "")
-      return toast("Por favor ingrese el nombre.", {
+    if (inputValues.name === "")
+      return toast("Insert name.", {
         duration: 2000,
         position: "top-center",
       });
-    if (inputValues.telefono === 0)
-      return toast("Por favor ingrese el numero de telefono",{
+    if (inputValues.phone === 0)
+      return toast("Insert phone number",{
         duration: 2000,
         position: "top-center",
       });
-    if (inputValues.telefono.length !== 10)
-      return toast("El numero de telefono debe tener 10 digitos",{
+    if (inputValues.phone.length < 7)
+      return toast("The phone number should be at least 7 characters",{
         duration: 2000,
         position: "top-center",
       });
@@ -46,14 +46,14 @@ export default function ModalForm({ handelModal, handelsubmit }) {
           <FaWindowClose onClick={handelModal} className="icon" />
         </div>
         <div className="body">
-          <h2>Registra tu contacto</h2>
+          <h2>Register your contact</h2>
           <form onSubmit={guardarDatos}>
             <label>
               <FaRegUser />
               <input
                 type="text"
-                name="nombre"
-                placeholder="Ingrese el nombre"
+                name="name"
+                placeholder="Insert name"
                 onChange={(e) => handelchange(e)}
               />
             </label>
@@ -62,13 +62,13 @@ export default function ModalForm({ handelModal, handelsubmit }) {
               <FaPhoneAlt />
               <input
                 type="number"
-                name="telefono"
-                placeholder="Ingrese el telefono"
+                name="phone"
+                placeholder="Insert phone"
                 onChange={(e) => handelchange(e)}
               />
             </label>
             <div className="container-boton">
-              <button>Registrar</button>
+              <button>Register</button>
             </div>
           </form>
         </div>
